@@ -1,69 +1,82 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="UTF-8">
-<title>운동 기록 입력</title>
-<style>
-    table {
-        border-collapse: collapse;
-        margin-bottom: 20px;
-    }
-    th, td {
-        border: 1px solid #ccc;
-        padding: 6px 10px;
-        text-align: center;
-    }
-    th {
-        background-color: #f5f5f5;
-    }
-    h2 {
-        margin-top: 40px;
-    }
-    input {
-        width: 60px;
-        text-align: center;
-    }
-</style>
+    <meta charset="UTF-8">
+    <title>Weight Balancing</title>
+    <link rel="stylesheet" href="./index.css">
 </head>
+
 <body>
-<h1>Weight Balancing</h1>
-<p>시작 시간: <input type="time" id="start-time"> | 종료 시간: <input type="time" id="end-time"></p>
+    <h1>Weight Balancing</h1>
 
-<h2>이지바 프리쳐컬</h2>
-<table id="preacher-table">
-    <tr><th>세트</th><th>무게</th><th>개수</th></tr>
-    <tr>
-        <td>1</td>
-        <td><input type="number" class="weight"></td>
-        <td><input type="number" class="count"></td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td><input type="number" class="weight"></td>
-        <td><input type="number" class="count"></td>
-    </tr>
-    <tr>
-        <th>총합</th>
-        <td id="avg-weight">-</td>
-        <td id="avg-count">-</td>
-    </tr>
-</table>
+    <hr>
 
-<button onclick="calculate()">계산하기</button>
+    <h2>2025-08-10-Sun</h2>
 
-<script>
-function calculate() {
-    const weights = [...document.querySelectorAll('#preacher-table .weight')]
-        .map(input => parseFloat(input.value) || 0);
-    const counts = [...document.querySelectorAll('#preacher-table .count')]
-        .map(input => parseInt(input.value) || 0);
+    <h3>Pull Up</h3>
+    <table>
+        <tr>
+            <th>Set</th>
+            <th>Repetitions</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td>44</td>
+        </tr>
+    </table>
 
-    const avgWeight = (weights.reduce((a,b)=>a+b,0) / weights.length).toFixed(1);
-    const avgCount = (counts.reduce((a,b)=>a+b,0) / counts.length).toFixed(1);
+    <h3>Body Weight</h3>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Body Weight (kg)</th>
+        </tr>
+        <tr>
+            <td>12:38 PM</td>
+            <td>60.1</td>
+        </tr>
+    </table>
 
-    document.getElementById('avg-weight').innerText = avgWeight;
-    document.getElementById('avg-count').innerText = avgCount;
-}
-</script>
+    <h3>Nutrient Supplement</h3>
+    <table>
+        <tr>
+            <th>Nutrient</th>
+            <th>Intake Amount (g)</th>
+        </tr>
+        <tr>
+            <td>Protein</td>
+            <td>40</td>
+        </tr>
+        <tr>
+            <td>Omega 3</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Vietamin 3</td>
+            <td>1</td>
+        </tr>
+    </table>
+
+    <hr>
 </body>
-</html>
